@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/oauth2
+    username: oauth2_sys
+    password: 741852963oauth2
+    hikari:
+      schema: oauth2_sys
+  data:
+    redis:
+      host: 127.0.0.1
+#      host: 192.168.56.102
+      port: 6379
+      password: 741852963redis
+
+logging:
+  level:
+    org.springframework.security: trace
+    com.zzj: debug
+
+security:
+  rsa:
+    public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqdQMky+9PIfsSkM7m2kH7G+CfOIP/UkO5h1NIjZFXI3JQ5mnugErWKj+t71aUTsyahGwWIciCbf89jndbvOF+3V+oZTp6Nc7TyXkiy5fF6fNbLB9iBxjaMeoOnzxlTC6UQfoFVwFEWenKLmf2HqXtLZAhF7vBZGAk76V0KpYY2PXpO/doh5aNBpQXYUU+KKmZ5EMPMCOpgi1Lau+R8JO6H4keFuR2D8Qvo9P/8lWpQUYJreJ/PGFEQgzB9HMEVwXCp+GRHpim5+gmy6REjpzpTiYuPp+x5SVItJBigxw0c8IH0qEvLsYH+0tD1lrpxxXwJyE9YyfzLC83lkUhWNjCQIDAQAB
+    private-key: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCp1AyTL708h+xKQzubaQfsb4J84g/9SQ7mHU0iNkVcjclDmae6AStYqP63vVpROzJqEbBYhyIJt/z2Od1u84X7dX6hlOno1ztPJeSLLl8Xp81ssH2IHGNox6g6fPGVMLpRB+gVXAURZ6couZ/Yepe0tkCEXu8FkYCTvpXQqlhjY9ek792iHlo0GlBdhRT4oqZnkQw8wI6mCLUtq75Hwk7ofiR4W5HYPxC+j0//yValBRgmt4n88YURCDMH0cwRXBcKn4ZEemKbn6CbLpESOnOlOJi4+n7HlJUi0kGKDHDRzwgfSoS8uxgf7S0PWWunHFfAnIT1jJ/MsLzeWRSFY2MJAgMBAAECggEAIy9ls5Duef4HPJOVY+ts0tV/iXQkr+tVBOQJOQ9Za4WMr07Ea0sWufW5YEQA1FeZaFRl3tGQgcb2x+TRNc2KcsCzDbMWi0EcbpeBNDzVQsdnTh96wppvFiRXfFaqjqhb0bH7qYE5I5QAE/XxYh50E+K2lzY7+0FcDEAuNd81FNIiTGsaTAL74GmWg/p8OwWmSwBBO0dlA8wo02JfJ7MGrkIYA33vCDSkaL+OKKyJKBzs4xTYmt28HUWQqDAU2J4fDnfEdh+10J8zyHTNTDv/Yf/9sbw0bDEmgIwYYCpAYCyyADJ9VrKHIT0boCv3iT1XYuSjMakhK3jHbTSlLqwqKQKBgQDVur6BsTpQhDkjtI84gFBNNZJc2dWqOsCUGylMz1V1PSGC4f1Nn6oxUnQs9PAJ6aue2GJDY9GeyuUBwcShTcWA9qCd2bpJGpgcNtluTB2q47oPteu98SVSeSvGbS5i1P1e9PRADe9gF05ixjNuNP42q/xn26ynoB7j6Q9fqhnFUwKBgQDLao/0hkQVFhQZvR2GsYbtJkHgYMGiVQMJSYDGH6gyEhBhYNyKd+/tFYdq1Y3jBh9/aiEEsJw+AGvbdGsdtC9iq8FQJ2aLTPka5CbfaGIsm1h0sUVQWNZNrdzDW0MtbZVmZ8EQ9nGP6qzzvY+T/cWUMueRnQR0hiCX39SnQcCuswKBgEc820q3G8zChZkVEbevbRSPCp3QLZtzwcSb2QQ1BzLwkT7ivF8nHL8b0IU7jtZ/ACkNzpLProrS7cnMIBHzriTyD08Nxz2ek5yz230b+bd/+ABMjqrcuafno2Ob+J4Qh/MiilbfTi4lFodtsK7HEwR+Br9HRSEKCcHFaM5mD/jpAoGBAJNWCxD1E2kmhcai2TkPawholnyb+ITJCJr4d2KJ2Xzy4pR14SgWeV0DJAO4zL2sWLIkP+gyt+icy4K4D0IDmfLhLvMMptStGx1kNdfJtppSpr5XDDqHLiozjVyexMipv/XdntTXfCfetgkRu2ZZAHw4Zsxsq6Zu5Dq9MD05fgPLAoGBAMQjr5eAP4aLQ3WGZ5Z9pUsEWXH2qjT75T7aiNpz6HbaR+qt2zbxRxQH/g/eCXsr0ubJO6cqunpkOOe7LcF4w3ydLpFMVn0aV5xZwVFmEd9Trxwu39vR70Mn4sF/CPLy+s8kQOcqxq+N01BoCtU8ColvdaW4G8GJ7GBngZiLmJSp
+  front-url: http://localhost:9527/login/pwd-login
+#grpc:
+#  server:
+#    port: 22222
+#    enable-keep-alive: true
+#    permit-keep-alive-without-calls: true
+#  client:
+#    auth-grpc:
+#      address: static://localhost:22222
+#      enable-keep-alive: true
+#      keep-alive-without-calls: true
+#      negotiation-type: plaintext

@@ -1,0 +1,44 @@
+server:
+  port: 8888
+  shutdown: graceful
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 60s
+  application:
+    name: oauth2
+  profiles:
+    active: prod
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+logging:
+  config: classpath:logback/logback-${spring.profiles.active}.xml
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - refresh
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+security:
+  time-to-live: 600
+  ignore-urls:
+    - /favicon.ico
+    - /assets/**
+    - /webjars/**
+    - /login
+    - /oauth2/consent/parameters
+    - /logout
+    - /refreshToken
+    - /register
+    - /validateCode
+    - /wx/portal/{appId}
+    - /wx/authorization/{appId}
+    - /wx/authorization/{appId}/callback
